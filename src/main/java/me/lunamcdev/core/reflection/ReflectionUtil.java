@@ -1,9 +1,9 @@
 package me.lunamcdev.core.reflection;
 
+import lombok.NonNull;
 import me.lunamcdev.core.exception.BaseException;
 import me.lunamcdev.core.exception.ReflectionException;
 import me.lunamcdev.core.version.MinecraftVersion;
-import lombok.NonNull;
 import org.bukkit.Bukkit;
 
 import java.lang.reflect.Constructor;
@@ -277,11 +277,13 @@ public final class ReflectionUtil {
 			return false;
 		}
 	}
+
 	public static <T> T instantiate(final String classPath) {
 		final Class<T> clazz = lookupClass(classPath);
 
 		return instantiate(clazz);
 	}
+
 	public static <T> T instantiate(final Class<T> clazz) {
 		try {
 			final Constructor<T> constructor;
@@ -300,6 +302,7 @@ public final class ReflectionUtil {
 			throw new ReflectionException(ex, "Could not make instance of: " + clazz);
 		}
 	}
+
 	public static <T> T instantiate(final Constructor<T> constructor, final Object... params) {
 		try {
 			return constructor.newInstance(params);

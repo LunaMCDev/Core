@@ -1,7 +1,7 @@
 package me.lunamcdev.core.version;
 
-import me.lunamcdev.core.exception.BaseException;
 import lombok.Getter;
+import me.lunamcdev.core.exception.BaseException;
 import org.bukkit.Bukkit;
 
 public final class MinecraftVersion {
@@ -12,8 +12,8 @@ public final class MinecraftVersion {
 	private static V current;
 
 	public enum V {
-		v1_19(19, false),
-		v1_18(18),
+		v1_21(21, false),
+		v1_20(20),
 		v1_17(17),
 		v1_16(16),
 		v1_15(15),

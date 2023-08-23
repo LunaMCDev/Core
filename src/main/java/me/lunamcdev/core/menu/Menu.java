@@ -1,10 +1,10 @@
 package me.lunamcdev.core.menu;
 
+import lombok.Getter;
+import lombok.Setter;
 import me.lunamcdev.core.menu.button.Button;
 import me.lunamcdev.core.plugin.BasePlugin;
 import me.lunamcdev.core.task.Task;
-import lombok.Getter;
-import lombok.Setter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryAction;
 import org.bukkit.inventory.Inventory;
@@ -119,6 +119,12 @@ public abstract class Menu implements IMenu {
 		});
 	}
 
+	public void close() {
+		if (viewer != null) {
+			viewer.closeInventory();
+		}
+	}
+
 	@Override
 	public void onButtonClick(final Button button, final MenuClick click) {
 		button.onMenuClick(click);
@@ -142,7 +148,7 @@ public abstract class Menu implements IMenu {
 		this.viewer.setMetadata(MenuMetadata.LAST_CLOSED_MENU.getKey(), new FixedMetadataValue(BasePlugin.getInstance(), this));
 	}
 
-	protected void onMenuClose(Inventory inventory) {
+	protected void onMenuClose(final Inventory inventory) {
 
 	}
 
