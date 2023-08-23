@@ -14,6 +14,8 @@ public final class MinecraftVersion {
 	public enum V {
 		v1_21(21, false),
 		v1_20(20),
+		v1_19(19),
+		v1_18(18),
 		v1_17(17),
 		v1_16(16),
 		v1_15(15),
